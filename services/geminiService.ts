@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { FinancialData, SustainabilityData, LoanEvaluationResult } from "../types";
 
 // Always initialize GoogleGenAI with a named parameter for the apiKey.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 export async function evaluateLoan(
   financial: FinancialData,

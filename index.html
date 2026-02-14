@@ -19,12 +19,15 @@
             font-family: 'JetBrains Mono', monospace;
         }
         /* Custom animated background */
+        /* Premium Dark Gradient Background */
         .bg-mesh {
-            background: 
-                radial-gradient(at 0% 0%, rgba(15, 46, 42, 0.4) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(11, 16, 32, 1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(6, 24, 22, 0.8) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(11, 16, 32, 1) 0px, transparent 50%);
+            background: radial-gradient(
+                circle at 50% 30%,
+                #1e293b 0%,
+                #0f172a 40%,
+                #020617 100%
+            );
+            background-attachment: fixed;
         }
         @keyframes float {
             0% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
