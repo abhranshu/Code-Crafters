@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainScore | AI Green Loan Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0B1020;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom animated background */
+        .bg-mesh {
+            background: 
+                radial-gradient(at 0% 0%, rgba(15, 46, 42, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(11, 16, 32, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 24, 22, 0.8) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(11, 16, 32, 1) 0px, transparent 50%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+            50% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+            100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        }
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .particle {
+            position: fixed;
+            background: #00F5A0;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(2px);
+            z-index: 0;
+            animation: float linear infinite;
+        }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out both; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out both; }
+        .animate-rotate-slow { animation: rotate-slow 60s linear infinite; }
+        .animate-pulse-soft { animation: pulse-soft 4s ease-in-out infinite; }
+
+        /* Hide scrollbars but keep functionality */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(11, 16, 32, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 245, 160, 0.2);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 245, 160, 0.4);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B1020',
+                        emerald: '#0F2E2A',
+                        darkGreen: '#061816',
+                        electricGreen: '#00F5A0',
+                        cyberCyan: '#00D9FF',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-mesh min-h-screen">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
