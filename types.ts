@@ -20,4 +20,4 @@ export interface LoanEvaluationResult {
   recommendations: string[];
 }
 
-export type Page = 'landing' | 'dashboard' | 'evaluate' | 'portfolio' | 'analytics' | 'settings';
+export type Page = 'landing' | 'dashboard' | 'evaluate' | 'portfolio' | 'analytics' | 'settings' | 'signin' | 'signup';
