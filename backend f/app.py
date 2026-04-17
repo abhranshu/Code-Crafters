@@ -10,7 +10,15 @@ try:
 except ImportError:
     pass
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../dist", static_url_path="/")
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return app.send_static_file(path)
+    else:
+        return app.send_static_file('index.html')
 
 # Supabase PostgreSQL connection (optional). Set DATABASE_URL in .env to enable.
 def get_db_connection():
@@ -171,6 +179,7 @@ def calculate_interest_rate(financial_probability, green_score):
 # API Route
 # ---------------------------
 @app.route("/predict", methods=["POST"])
+@app.route("/api/predict", methods=["POST"])
 def predict():
     data = request.get_json()
 
