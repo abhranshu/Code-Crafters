@@ -29,8 +29,6 @@ venv/
 .venv/
 backend f/venv/
 
-# Large ML model binaries
-*.pkl
 
 # Large data / result files
 evaluation_results.json
