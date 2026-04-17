@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, ArrowLeft, Lock, Mail, Loader2 } from 'lucide-react';
 import { supabase } from '../services/supabase';

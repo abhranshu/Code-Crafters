@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { LayoutDashboard, ShieldCheck, PieChart, BarChart3, Settings, Leaf } from 'lucide-react';
 import { Page } from '../types';
 
@@ -23,7 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setPage }) => {
           <Leaf className="text-navy w-6 h-6" />
         </div>
         <h1 className="text-lg font-bold tracking-tight text-white uppercase">
-          SustainScore
+          ECOCRED
         </h1>
       </div>
 
@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setPage }) => {
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentPage === item.id;
-          
+
           return (
             <button
               key={item.id}

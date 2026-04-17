@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +23,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python virtual environments (contain huge binaries)
+venv/
+.venv/
+backend f/venv/
+
+# Large ML model binaries
+*.pkl
+
+# Large data / result files
+evaluation_results.json
+*.pptx
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo

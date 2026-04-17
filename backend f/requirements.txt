@@ -1,0 +1,7 @@
+Flask
+numpy
+scikit-learn
+xgboost
+joblib
+psycopg2-binary
+python-dotenv

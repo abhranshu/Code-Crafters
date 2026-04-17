@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import EvaluateLoan from './components/EvaluateLoan';
 import ResultDisplay from './components/ResultDisplay';
+import GreenPortfolio from './components/GreenPortfolio';
+import DeepAnalytics from './components/DeepAnalytics';
+import SystemSetup from './components/SystemSetup';
 import LandingPage from './components/LandingPage';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -35,26 +39,11 @@ const App: React.FC = () => {
       case 'dashboard':
         return <Dashboard />;
       case 'portfolio':
-        return (
-          <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-4">
-            <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center border border-white/10 animate-pulse">
-              <div className="w-10 h-10 border-2 border-electricGreen/20 border-t-electricGreen rounded-full animate-spin" />
-            </div>
-            <h2 className="text-2xl font-bold text-white">Portfolio View Locked</h2>
-            <p className="text-slate-500 max-w-sm">Accessing high-security enterprise archives. This module will be available in the version 2.0 release.</p>
-          </div>
-        );
+        return <GreenPortfolio />;
       case 'analytics':
+        return <DeepAnalytics />;
       case 'settings':
-        return (
-          <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-4">
-            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10">
-              <div className="w-6 h-6 border-2 border-cyberCyan/40 border-t-cyberCyan rounded-full animate-spin" />
-            </div>
-            <h2 className="text-xl font-bold text-white uppercase tracking-widest">Module Initializing</h2>
-            <p className="text-slate-500 max-w-xs text-sm">System synchronization in progress. Advanced logic gates are being calibrated for your account.</p>
-          </div>
-        );
+        return <SystemSetup />;
       default:
         return <Dashboard />;
     }
@@ -117,7 +106,7 @@ const App: React.FC = () => {
             <div className="w-10 h-10 bg-gradient-to-br from-electricGreen to-cyberCyan rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(0,245,160,0.3)]">
               <Leaf className="text-navy w-6 h-6" />
             </div>
-            <h1 className="text-xl font-bold tracking-tight text-white uppercase">SustainScore</h1>
+            <h1 className="text-xl font-bold tracking-tight text-white uppercase">ECOCRED</h1>
           </div>
           <div className="flex items-center gap-4">
             <button
@@ -135,7 +124,7 @@ const App: React.FC = () => {
           </div>
         </header>
 
-        <LandingPage onEnter={() => setCurrentPage('dashboard')} />
+        <LandingPage onEnter={() => setCurrentPage('evaluate')} />
       </div>
     );
   }
@@ -193,7 +182,7 @@ const App: React.FC = () => {
       </main>
 
       <footer className="fixed bottom-0 left-64 right-0 p-4 text-center text-[10px] text-slate-600 bg-navy/80 backdrop-blur-md border-t border-white/5 z-50 pointer-events-none">
-        &copy; 2025 SUSTAINSCORE INTELLIGENCE SYSTEMS | SECURED BY QUANTUM ENCRYPTION
+        &copy; 2025 ECOCRED INTELLIGENCE SYSTEMS | SECURED BY QUANTUM ENCRYPTION
       </footer>
     </div>
   );

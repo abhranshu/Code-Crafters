@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Leaf, Zap, BarChart3, Globe, ChevronRight, CheckCircle2, Database } from 'lucide-react';
 import GlassCard from './GlassCard';
 import dashboardImg from '../assets/dashboard_ui.jpg';
@@ -16,10 +16,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10 pointer-events-none">
           <svg className="w-[800px] h-[800px] animate-rotate-slow" viewBox="0 0 200 200">
             <circle cx="100" cy="100" r="80" fill="none" stroke="#00F5A0" strokeWidth="0.5" strokeDasharray="4 2" />
-            <circle cx="100" cy="100" r="60" fill="none" stroke="#00D9FF" strokeWidth="0.5" strokeDasharray="2 4" />
+            <circle cx="100" cy="100" r="60" fill="none" stroke="#2DD4BF" strokeWidth="0.5" strokeDasharray="2 4" />
             <line x1="20" y1="100" x2="180" y2="100" stroke="#00F5A0" strokeWidth="0.2" />
             <line x1="100" y1="20" x2="100" y2="180" stroke="#00F5A0" strokeWidth="0.2" />
-            <path d="M60 60 L140 140 M140 60 L60 140" stroke="#00D9FF" strokeWidth="0.2" />
+            <path d="M60 60 L140 140 M140 60 L60 140" stroke="#2DD4BF" strokeWidth="0.2" />
           </svg>
         </div>
 
@@ -31,7 +31,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
         >
           <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[1.1] mb-8" style={{ letterSpacing: '-0.02em', fontWeight: 700, textShadow: '0 2px 20px rgba(0, 255, 200, 0.3)' }}>
             Redefining Sustainable <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-cyberCyan drop-shadow-[0_0_15px_rgba(0,245,160,0.3)]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-cyberCyan drop-shadow-[0_0_15px_rgba(45,212,191,0.3)]">
               Lending with AI
             </span>
           </h1>
@@ -72,7 +72,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
             </h2>
             <div className="w-32 h-[1px] bg-gradient-to-r from-electricGreen to-transparent" />
             <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-              Most risk models fail to account for environmental transitions. SustainScore bridges the gap between financial stability and ecological responsibility, ensuring your capital drives long-term value.
+              Most risk models fail to account for environmental transitions. ECOCRED bridges the gap between financial stability and ecological responsibility, ensuring your capital drives long-term value.
             </p>
           </motion.div>
           <motion.div
@@ -94,7 +94,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
       {/* 3. HOW SUSTAINSCORE WORKS */}
       <section className="py-32 px-6">
         <div className="max-w-[1200px] mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">How SustainScore Works</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">How ECOCRED Works</h2>
           <p className="text-slate-400 max-w-2xl mx-auto">Our proprietary engine synchronizes ESG telemetry with traditional fiscal metrics.</p>
         </div>
 
@@ -149,7 +149,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
             <div className="rounded-2xl border border-white/10 bg-navy/80 overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-[1.01] group-hover:border-electricGreen/30">
               <img
                 src={dashboardImg}
-                alt="SustainScore Dashboard Preview"
+                alt="ECOCRED Dashboard Preview"
                 className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
@@ -247,6 +247,59 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
         </motion.div>
       </section>
 
+      {/* 7. GLOBAL IMPACT GALLERY */}
+      <section className="py-32 px-6 bg-navy/30 border-t border-white/5">
+        <div className="max-w-[1200px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Driving Global Impact</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">Visualizing the future of sustainable finance and ecological restoration.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                src: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
+                alt: "Wind Energy",
+                caption: "Renewable Energy Transition"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+                alt: "Reforestation",
+                caption: "Active Reforestation Projects"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80",
+                alt: "Green Finance",
+                caption: "Sustainable Corporate Governance"
+              }
+            ].map((img, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative h-80 rounded-2xl overflow-hidden border border-white/10"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-bold text-lg">{img.caption}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 8. FOOTER */}
       <footer className="py-20 px-6 border-t border-white/10 mt-20">
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
@@ -284,7 +337,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
           </div>
         </div>
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-[10px] text-slate-600 uppercase tracking-widest font-bold">
-          <span>&copy; 2025 SUSTAINSCORE INTELLIGENCE SYSTEMS</span>
+          <span>&copy; 2025 ECOCRED INTELLIGENCE SYSTEMS</span>
           <div className="flex gap-6 mt-4 md:mt-0">
             <span className="hover:text-electricGreen cursor-pointer transition-colors">Twitter</span>
             <span className="hover:text-electricGreen cursor-pointer transition-colors">LinkedIn</span>

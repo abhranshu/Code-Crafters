@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import GlassCard from './GlassCard';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { TrendingUp, Users, Leaf, ShieldAlert } from 'lucide-react';
@@ -95,14 +95,14 @@ const Dashboard: React.FC = () => {
               <AreaChart data={data}>
                 <defs>
                   <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#00F5A0" stopOpacity={0.2}/>
-                    <stop offset="95%" stopColor="#00F5A0" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#00F5A0" stopOpacity={0.2} />
+                    <stop offset="95%" stopColor="#00F5A0" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />
                 <XAxis dataKey="name" stroke="#475569" fontSize={10} tickLine={false} axisLine={false} />
                 <YAxis stroke="#475569" fontSize={10} tickLine={false} axisLine={false} />
-                <Tooltip 
+                <Tooltip
                   contentStyle={{ backgroundColor: '#0B1020', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}
                   itemStyle={{ color: '#00F5A0', fontSize: '12px' }}
                 />
@@ -128,8 +128,8 @@ const Dashboard: React.FC = () => {
                   <span className="text-white mono">{sector.val}%</span>
                 </div>
                 <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                  <div 
-                    className={`h-full ${sector.color} rounded-full transition-all duration-1000`} 
+                  <div
+                    className={`h-full ${sector.color} rounded-full transition-all duration-1000`}
                     style={{ width: `${sector.val}%` }}
                   />
                 </div>
