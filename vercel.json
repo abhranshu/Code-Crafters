@@ -2,5 +2,11 @@
     "framework": "vite",
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "ignoreCommand": "git diff --quiet HEAD^ HEAD ./"
+    "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "https://code-crafters-e9a7.onrender.com/api/$1"
+        }
+    ]
 }
